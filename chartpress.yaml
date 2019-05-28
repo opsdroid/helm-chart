@@ -1,0 +1,5 @@
+charts:
+  - name: opsdroid
+    repo:
+      git: opsdroid/helm-chart
+      published: https://helm.opsdroid.dev
