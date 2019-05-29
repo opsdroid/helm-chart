@@ -4,7 +4,7 @@
 <p>See installation instructions at:</p>
 
 <ul>
-<li><a href="https://helm.opsdroid.dev">Opsdroid</a></li>
+<li><a href="https://github.com/opsdroid/helm-chart">Opsdroid</a></li>
 </ul>
 
 <h2>Stable releases</h2>
@@ -12,7 +12,8 @@
 {% assign all_charts = opsdroid %}
 <table>
   <tr>
-    <th>release</th>
+    <th>chart version</th>
+    <th>app version</th>
     <th>date</th>
   </tr>
   {% for chart in all_charts %}
@@ -24,7 +25,12 @@
       </a>
       </td>
       <td>
-      <span class='date'>{{ chart.created | date_to_rfc822 }}</span>
+          <a href="https://docs.opsdroid.dev/en/v{{ chart.appVersion }}/">
+              {{ chart.appVersion }}
+          </a>
+      </td>
+      <td>
+          <span class='date'>{{ chart.created | date_to_rfc822 }}</span>
       </td>
     </tr>
     {% endunless %}
