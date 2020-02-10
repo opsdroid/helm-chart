@@ -1,7 +1,7 @@
 opsdroid:
   image:
     repository: opsdroid/opsdroid
-    tag: v0.15.4
+    tag: v0.17.1
     imagePullPolicy: IfNotPresent
 
   service:
