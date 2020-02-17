@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Get latest Docker Hub tag
         id: latest_tag
         uses: jacobtomlinson/gha-get-docker-hub-tags@0.1.3
@@ -28,14 +28,13 @@ jobs:
           find: "${{ steps.chart.outputs.appVersion }}"
           replace: "${{ steps.latest_tag.outputs.tag }}"
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v1
+        uses: peter-evans/create-pull-request@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "Update Opsdroid version to ${{ steps.latest_tag.outputs.tag }}"
           title: "Update Opsdroid version to ${{ steps.latest_tag.outputs.tag }}"
           reviewers: "jacobtomlinson"
           branch: "upgrade-opsdroid-version"
-          branch-suffix: "none"
           body: |
             A new Opsdroid Docker image version has been detected.
 
