@@ -7,6 +7,7 @@ on:
 jobs:
   check-version:
     runs-on: ubuntu-latest
+    if: github.repository == 'opsdroid/helm-chart'
 
     steps:
       - uses: actions/checkout@v2
