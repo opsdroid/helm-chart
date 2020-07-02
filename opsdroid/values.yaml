@@ -17,12 +17,12 @@ opsdroid:
 
   pvc:
     enabled: false
-    # annotations: {}
-    # selector: {}
-    # accessModes:
-    #   - ReadWriteOnce
-    # storage: 5Gi
-    # storageClassName:
+    annotations: {}
+    selector: {}
+    accessModes:
+      - ReadWriteOnce
+    storage: 5Gi
+    storageClassName:
 
   ingress:
     enabled: false
@@ -64,9 +64,9 @@ rasanlu:
 
   pvc:
     enabled: false
-    # annotations: {}
-    # selector: {}
-    # accessModes:
-    #   - ReadWriteOnce
-    # storage: 5Gi
-    # storageClassName:
+    annotations: {}
+    selector: {}
+    accessModes:
+      - ReadWriteOnce
+    storage: 5Gi
+    storageClassName:
