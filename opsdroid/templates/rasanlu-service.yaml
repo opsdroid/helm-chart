@@ -1,4 +1,5 @@
 {{- if .Values.rasanlu.enabled -}}
+apiVersion: v1
 kind: Service
 metadata:
   name: rasanlu
