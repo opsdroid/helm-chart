@@ -4,18 +4,18 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: rasanlu-data
-  {{ if .Values.rasanlu.pvc.annotations -}}
+  {{- if .Values.rasanlu.pvc.annotations -}}
   annotations:
     {{- range $key, $value := .Values.rasanlu.pvc.annotations }}
     {{ $key }}: {{ $value | quote }}
     {{- end }}
   {{- end }}
 spec:
-  {{ if .Values.rasanlu.pvc.selector -}}
+  {{- if .Values.rasanlu.pvc.selector -}}
   selector:
 {{ toYaml .Values.rasanlu.pvc.selector | indent 4 }}
   {{- end }}
-  {{ if typeIs "string" .Values.rasanlu.pvc.storageClassName -}}
+  {{- if typeIs "string" .Values.rasanlu.pvc.storageClassName -}}
   storageClassName: {{ .Values.rasanlu.pvc.storageClassName | quote }}
   {{- end }}
   accessModes:
