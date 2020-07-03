@@ -11,7 +11,7 @@ spec:
         app: rasanlu
     spec:
       volumes:
-      {{- if .Values.rasanlu.pvc.enabled -}}
+      {{- if .Values.rasanlu.pvc.enabled }}
         - name: rasanlu-data
           persistentVolumeClaim:
             claimName: rasanlu-data
@@ -32,7 +32,7 @@ spec:
 {{ toYaml $.Values.rasanlu.resources | indent 12 }}
         {{- end }}
           volumeMounts:
-          {{- if .Values.rasanlu.pvc.enabled -}}
+          {{- if .Values.rasanlu.pvc.enabled }}
             - mountPath: /app/projects
               name: rasanlu-data
               subPath: projects

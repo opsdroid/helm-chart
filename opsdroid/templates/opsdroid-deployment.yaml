@@ -24,7 +24,7 @@ spec:
               subPath: configuration.yaml
               readOnly: false
             {{- end }}
-            {{- if .Values.opsdroid.pvc.enabled -}}
+            {{- if .Values.opsdroid.pvc.enabled }}
             - mountPath: /data
               name: opsdroid-data
               subPath: data
@@ -53,7 +53,7 @@ spec:
           configMap:
             name: opsdroid-config
         {{- end }}
-        {{- if .Values.opsdroid.pvc.enabled -}}
+        {{- if .Values.opsdroid.pvc.enabled }}
         - name: opsdroid-data
           persistentVolumeClaim:
             claimName: opsdroid-data
