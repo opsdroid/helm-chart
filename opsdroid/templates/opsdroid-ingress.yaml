@@ -1,13 +1,13 @@
 {{- if .Values.opsdroid.ingress.enabled -}}
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   labels:
-    app: {{ template "opsdroid.name" . }}
+    app: {{ .Release.Name }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
-  name: {{ template "opsdroid.fullname" . }}
+  name: {{ .Release.Name }}
   annotations:
     {{- range $key, $value := .Values.opsdroid.ingress.annotations }}
       {{ $key }}: {{ $value | quote }}
@@ -19,9 +19,12 @@ spec:
       http:
         paths:
           - path: /
+            pathType: Prefix
             backend:
-              serviceName: opsdroid
-              servicePort: {{ .Values.opsdroid.service.port }}
+              service:
+                name: opsdroid
+                port:
+                  number: {{ $.Values.opsdroid.service.port }}
     {{- end -}}
   {{- if .Values.opsdroid.ingress.tls }}
   tls:
