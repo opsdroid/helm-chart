@@ -1,7 +1,5 @@
 # Opsdroid Helm Chart
 
-[![Build Status](https://travis-ci.com/opsdroid/helm-chart.svg?branch=master)](https://travis-ci.com/opsdroid/helm-chart)
-
 Opsdroid is a ChatOps bot framework written in Python. This helm chart allows you to easily install opsdroid on a kubernetes cluster.
 
 - https://opsdroid.dev
