@@ -14,4 +14,4 @@ set -x
 # git ahead of time to use the identity we decrypted earlier.
 export GIT_SSH_COMMAND="ssh -i ${PWD}/ci/id_rsa"
 
-chartpress --commit-range "${TRAVIS_COMMIT_RANGE}" --tag "${TRAVIS_TAG}" --publish-chart
+chartpress --tag "${GITHUB_REF}" --publish-chart

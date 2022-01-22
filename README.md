@@ -1,5 +1,7 @@
 # Opsdroid Helm Chart
 
+[![Publish](https://github.com/opsdroid/helm-chart/actions/workflows/publish-chart.yml/badge.svg)](https://github.com/opsdroid/helm-chart/actions/workflows/publish-chart.yml)
+
 Opsdroid is a ChatOps bot framework written in Python. This helm chart allows you to easily install opsdroid on a kubernetes cluster.
 
 - https://opsdroid.dev
