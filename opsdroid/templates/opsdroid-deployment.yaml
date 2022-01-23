@@ -23,7 +23,7 @@ spec:
           volumeMounts:
             {{- if $.Values.opsdroid.configuration }}
             - name: config
-              mountPath: "/root/.config/opsdroid/configuration.yaml"
+              mountPath: "/home/opsdroid/.config/opsdroid/configuration.yaml"
               subPath: configuration.yaml
               readOnly: false
             {{- end }}
