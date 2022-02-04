@@ -21,11 +21,11 @@ jobs:
         id: chart
         uses: jacobtomlinson/gha-read-helm-chart@0.1.2
         with:
-          path: opsdroid
+          path: charts/opsdroid
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@0.1.0
         with:
-          include: "opsdroid/"
+          include: "charts/opsdroid/"
           find: "${{ steps.chart.outputs.appVersion }}"
           replace: "${{ steps.latest_tag.outputs.tag }}"
       - name: Create Pull Request
