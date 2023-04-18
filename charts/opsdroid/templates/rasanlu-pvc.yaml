@@ -3,7 +3,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: rasanlu-data
+  name: rasanlu-{{ .Release.Name }}-data
   {{- if .Values.rasanlu.pvc.annotations -}}
   annotations:
     {{- range $key, $value := .Values.rasanlu.pvc.annotations }}

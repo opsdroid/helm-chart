@@ -2,12 +2,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: rasanlu
+  name: rasanlu-{{ .Release.Name }}
 spec:
   ports:
     - port: {{ .Values.rasanlu.service.port }}
       targetPort: {{ .Values.rasanlu.service.port }}
       protocol: TCP
   selector:
-    app: rasanlu
+    app: rasanlu-{{ .Release.Name }}
 {{- end -}}

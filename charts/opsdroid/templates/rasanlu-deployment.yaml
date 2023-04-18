@@ -8,13 +8,13 @@ spec:
   template:
     metadata:
       labels:
-        app: rasanlu
+        app: rasanlu-{{ .Release.Name }}
     spec:
       volumes:
       {{- if .Values.rasanlu.pvc.enabled }}
         - name: rasanlu-data
           persistentVolumeClaim:
-            claimName: rasanlu-data
+            claimName: rasanlu-{{ .Release.Name }}-data
       {{- end }}
       containers:
         - image: {{ .Values.rasanlu.image.repository }}:{{ .Values.rasanlu.image.tag }}

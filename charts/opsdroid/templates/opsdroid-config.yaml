@@ -2,7 +2,7 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: opsdroid-config
+  name: opsdroid-{{ .Release.Name }}-config
 data:
   configuration.yaml: |
 {{ .Values.opsdroid.configuration | indent 4 }}

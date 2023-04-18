@@ -1,7 +1,7 @@
 opsdroid:
   image:
     repository: opsdroid/opsdroid
-    tag: v0.25.0
+    tag: v0.28.0
     imagePullPolicy: IfNotPresent
 
   service:
@@ -9,11 +9,11 @@ opsdroid:
 
   resources:
     # limits:
-    #  cpu: 1000m
-    #  memory: 1Gi
+    #   cpu: 1000m
+    #   memory: 1Gi
     # requests:
-    #  cpu: 100m
-    #  memory: 256Mi
+    #   cpu: 100m
+    #   memory: 1Gi
 
   pvc:
     enabled: false
@@ -35,11 +35,34 @@ opsdroid:
     #     hosts:
     #       - opsdroid.example.com
 
-  environment: []
+  environment:
+    #- name: "HTTP_PROXY"
+    #  value: ""
+    #- name: "HTTPS_PROXY"
+    #  value: ""
+    #- name: "http_proxy"
+    #  value: ""
+    #- name: "https_proxy"
+    #  value: ""
+    #- name: "no_proxy"
+    #  value: ".cluster.local"
 
-  configuration:
-  # configuration: |
-  #   # opsdroid config
+  configuration: |
+    welcome-message: true
+    skills:
+      ## Dance (https://github.com/opsdroid/skill-dance)
+      dance: {}
+
+      ## Hello (https://github.com/opsdroid/skill-hello)
+      hello: {}
+
+      ## Loudnoises (https://github.com/opsdroid/skill-loudnoises)
+      loudnoises: {}
+
+      ## Seen (https://github.com/opsdroid/skill-seen)
+      seen: {}
+      # Configurations for other skills uncomment desired skill to activate it.
+      devtools: {}
 
 rasanlu:
   enabled: false
