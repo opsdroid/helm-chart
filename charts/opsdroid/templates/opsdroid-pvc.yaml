@@ -2,7 +2,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: opsdroid-data
+  name: opsdroid-{{ .Release.Name }}-data
   {{- if .Values.opsdroid.pvc.annotations -}}
   annotations:
     {{- range $key, $value := .Values.opsdroid.pvc.annotations }}

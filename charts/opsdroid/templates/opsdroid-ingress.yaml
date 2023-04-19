@@ -7,7 +7,7 @@ metadata:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     heritage: {{ .Release.Service }}
     release: {{ .Release.Name }}
-  name: {{ .Release.Name }}
+  name: opsdroid-{{ .Release.Name }}
   annotations:
     {{- range $key, $value := .Values.opsdroid.ingress.annotations }}
       {{ $key }}: {{ $value | quote }}
@@ -22,7 +22,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: opsdroid
+                name: opsdroid-{{ .Release.Name }}
                 port:
                   number: {{ $.Values.opsdroid.service.port }}
     {{- end -}}

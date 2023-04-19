@@ -5,12 +5,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: opsdroid
+      app: opsdroid-{{ .Release.Name }}
   replicas: 1
   template:
     metadata:
       labels:
-        app: opsdroid
+        app: opsdroid-{{ .Release.Name }}
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/opsdroid-config.yaml") . | sha256sum }}
     spec:
@@ -43,7 +43,7 @@ spec:
             - name: {{ .name }}
               valueFrom:
                 secretKeyRef:
-                  name: opsdroid-config
+                  name: opsdroid-{{ $.Release.Name }}-config
                   key: {{ .name }}
             {{- end }}
         {{- if $.Values.opsdroid.resources }}
@@ -54,10 +54,10 @@ spec:
         {{- if $.Values.opsdroid.configuration }}
         - name: config
           configMap:
-            name: opsdroid-config
+            name: opsdroid-{{ .Release.Name }}-config
         {{- end }}
         {{- if .Values.opsdroid.pvc.enabled }}
         - name: opsdroid-data
           persistentVolumeClaim:
-            claimName: opsdroid-data
+            claimName: opsdroid-{{ .Release.Name }}-data
         {{- end }}
