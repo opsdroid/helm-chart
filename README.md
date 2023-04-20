@@ -25,7 +25,7 @@ $ helm repo update
 To install the chart with the release name `my-bot`:
 
 ```bash
-$ helm install --name my-bot opsdroid/opsdroid
+$ helm install my-bot opsdroid/opsdroid
 ```
 
 ## Configuration
