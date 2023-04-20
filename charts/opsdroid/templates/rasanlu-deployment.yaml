@@ -1,10 +1,13 @@
 {{- if .Values.rasanlu.enabled -}}
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: rasanlu-{{ .Release.Name }}
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: rasanlu-{{ .Release.Name }}
   template:
     metadata:
       labels:
