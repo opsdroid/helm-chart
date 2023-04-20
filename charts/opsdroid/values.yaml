@@ -49,6 +49,8 @@ opsdroid:
 
   configuration: |
     welcome-message: true
+    connectors:
+      websocket:
     skills:
       ## Dance (https://github.com/opsdroid/skill-dance)
       dance: {}
