@@ -3,6 +3,30 @@ entries:
   opsdroid:
   - apiVersion: v1
     appVersion: 0.28.0
+    created: "2023-05-12T09:20:15.546047537Z"
+    description: Opsdroid is a ChatOps bot framework written in Python
+    digest: 0f75bdbdc16d6eb865c8fecbc554ff1f32bcd1a7dc5954b93860ce9f504d890e
+    home: http://opsdroid.dev
+    icon: https://raw.githubusercontent.com/opsdroid/style-guidelines/master/logos/logo-light.png
+    keywords:
+    - chatbot
+    - chatops
+    - botops
+    - natural language
+    - bot framework
+    maintainers:
+    - email: jacob@tomlinson.email
+      name: jacobtomlinson
+    - email: oleg@fiksel.info
+      name: oleg-fiksel
+    name: opsdroid
+    sources:
+    - https://github.com/opsdroid/opsdroid
+    urls:
+    - https://github.com/opsdroid/helm-chart/releases/download/opsdroid-0.1.8/opsdroid-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v1
+    appVersion: 0.28.0
     created: "2023-04-19T09:08:11.954882347Z"
     description: Opsdroid is a ChatOps bot framework written in Python
     digest: c59ed61b1ce9ecf1b013d8ce1917f3972ac57fae33ca708681372e5b09abbef0
@@ -154,4 +178,4 @@ entries:
     urls:
     - https://helm.opsdroid.dev/opsdroid-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-19T09:08:11.954910349Z"
+generated: "2023-05-12T09:20:15.546240143Z"
