@@ -1,10 +1,13 @@
 {{- if .Values.rasanlu.enabled -}}
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: rasanlu-{{ .Release.Name }}
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: rasanlu-{{ .Release.Name }}
   template:
     metadata:
       labels:
@@ -18,15 +21,11 @@ spec:
       {{- end }}
       containers:
         - image: {{ .Values.rasanlu.image.repository }}:{{ .Values.rasanlu.image.tag }}
+          args: ["run", "--enable-api"{{- if .Values.rasanlu.token }}, "--auth-token", "{{ .Values.rasanlu.token }}"{{- end }}{{- if .Values.rasanlu.debug_log }}, "-vv"{{- end }}]
           imagePullPolicy: {{ .Values.rasanlu.image.imagePullPolicy }}
           name: rasanlu
           ports:
             - containerPort: {{ .Values.rasanlu.service.port }}
-          env:
-            {{- if .Values.rasanlu.token }}
-            - name: RASA_TOKEN
-              value: {{ .Values.rasanlu.token }}
-            {{- end }}
         {{- if $.Values.resources }}
           resources:
 {{ toYaml $.Values.rasanlu.resources | indent 12 }}

@@ -49,6 +49,8 @@ opsdroid:
 
   configuration: |
     welcome-message: true
+    connectors:
+      websocket:
     skills:
       ## Dance (https://github.com/opsdroid/skill-dance)
       dance: {}
@@ -69,13 +71,15 @@ rasanlu:
 
   token: abc123
 
+  debug_log: false
+
   image:
-    repository: rasa/rasa_nlu
-    tag: 0.11.3-full
+    repository: rasa/rasa
+    tag: 3.3.3-full
     imagePullPolicy: IfNotPresent
 
   service:
-    port: 5000
+    port: 5005
 
   resources:
     # limits:

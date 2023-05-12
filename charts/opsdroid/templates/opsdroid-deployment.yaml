@@ -25,7 +25,7 @@ spec:
             - name: config
               mountPath: "/home/opsdroid/.config/opsdroid/configuration.yaml"
               subPath: configuration.yaml
-              readOnly: false
+              readOnly: true
             {{- end }}
             {{- if .Values.opsdroid.pvc.enabled }}
             - mountPath: /data
