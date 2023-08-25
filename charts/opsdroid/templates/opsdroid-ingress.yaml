@@ -22,7 +22,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: opsdroid-{{ .Release.Name }}
+                name: opsdroid-{{ $.Release.Name }}
                 port:
                   number: {{ $.Values.opsdroid.service.port }}
     {{- end -}}
