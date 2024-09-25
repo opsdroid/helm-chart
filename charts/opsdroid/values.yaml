@@ -26,6 +26,7 @@ opsdroid:
 
   ingress:
     enabled: false
+    ingressClassName: ""
     # hosts:
     #   - opsdroid.example.com
     # annotations:
