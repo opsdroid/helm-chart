@@ -75,12 +75,13 @@ The following tables list the configurable parameters of the Opsdroid chart and 
 
 #### Ingress
 
-| Parameter                      | Description                        | Default |
-| ------------------------------ | ---------------------------------- | ------- |
-| `opsdroid.ingress.enabled`     | Use an Ingress to access opsdroid  | `false` |
-| `opsdroid.ingress.annotations` | Opsdroid Ingress annotations       | `{}`    |
-| `opsdroid.ingress.hosts`       | Opsdroid Ingress Hostnames         | `[]`    |
-| `opsdroid.ingress.tls`         | Opsdroid Ingress TLS configuration | `[]`    |
+| Parameter                           | Description                        | Default |
+| ----------------------------------- | ---------------------------------- | ------- |
+| `opsdroid.ingress.enabled`          | Use an Ingress to access opsdroid  | `false` |
+| `opsdroid.ingress.annotations`      | Opsdroid Ingress annotations       | `{}`    |
+| `opsdroid.ingress.hosts`            | Opsdroid Ingress Hostnames         | `[]`    |
+| `opsdroid.ingress.ingressClassName` | Opsdroid Ingress Class Name        | `nil`   |
+| `opsdroid.ingress.tls`              | Opsdroid Ingress TLS configuration | `[]`    |
 
 ### Rasa NLU
 
