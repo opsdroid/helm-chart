@@ -3,9 +3,9 @@ entries:
   opsdroid:
   - apiVersion: v1
     appVersion: 0.30.0
-    created: "2025-01-22T11:19:09.973761508Z"
+    created: "2025-01-22T11:22:39.694458347Z"
     description: Opsdroid is a ChatOps bot framework written in Python
-    digest: 90bc20874b1306e9d0e1f410ee87b4a5cdfb87d6c5ac38a50e2c966f1b141c81
+    digest: fe6d644555d3ca425b6a874a1b4a2378269e6ac802e783d3f6c40c143259ce9a
     home: http://opsdroid.dev
     icon: https://raw.githubusercontent.com/opsdroid/style-guidelines/master/logos/logo-light.png
     keywords:
@@ -23,8 +23,8 @@ entries:
     sources:
     - https://github.com/opsdroid/opsdroid
     urls:
-    - https://github.com/opsdroid/helm-chart/releases/download/opsdroid-0.1.10/opsdroid-0.1.10.tgz
-    version: 0.1.10
+    - https://github.com/opsdroid/helm-chart/releases/download/opsdroid-0.1.11/opsdroid-0.1.11.tgz
+    version: 0.1.11
   - apiVersion: v1
     appVersion: 0.28.0
     created: "2023-05-12T09:20:15.546047537Z"
@@ -202,4 +202,4 @@ entries:
     urls:
     - https://helm.opsdroid.dev/opsdroid-0.1.0.tgz
     version: 0.1.0
-generated: "2025-01-22T11:19:09.97381613Z"
+generated: "2025-01-22T11:22:39.694501768Z"
