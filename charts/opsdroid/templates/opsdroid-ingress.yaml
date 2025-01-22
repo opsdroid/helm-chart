@@ -13,6 +13,7 @@ metadata:
       {{ $key }}: {{ $value | quote }}
     {{- end }}
 spec:
+  ingressClassName: {{ $.Values.opsdroid.ingress.ingressClassName }}
   rules:
     {{- range $host := .Values.opsdroid.ingress.hosts }}
     - host: {{ $host }}
