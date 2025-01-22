@@ -136,16 +136,17 @@ $ helm install --name my-release -f values.yaml incubator/opsdroid
 
 ## Releasing
 
-Releases of the Helm chart are automatically pushed to the `gh-pages` branch by Travis CI when git tags are created.
+Releases of the Helm chart are automatically pushed to the `gh-pages` branch by GitHub Actions when the version in the `Chart.yaml` is modified.
 
 Before releasing you may want to ensure the chart is up to date with the latest Docker images and opsdroid versions:
 
 - Update the image tags in `opsdroid/values.yaml` to reflect the [latest release of the opsdroid Docker images](https://github.com/opsdroid/opsdroid/releases).
 - Update the `appVersion` value in `opsdroid/Chart.yaml` to also reflect this version.
 
-Then to perform a release you need to create and push a new tag.
+Then to perform a release you need to create rev the version on master.
 
 - Update the `version` key in `opsdroid/Chart.yaml` with the new chart version `x.x.x`.
-- Add a release commit `git commit -a -m "bump version to x.x.x"`.
-- [Create a release on GitHub](https://github.com/opsdroid/helm-chart/releases/new).
-- Travis CI will automatically build and release to the chart repository.
+- Add a release PR with this new version.
+- When merging the PR GitHub Actions will create a new tag and release automatically.
+  - The chart will be built and attached to the release. 
+  - A new commit will be pushed to the `gh-pages` branch to update the repo index to point to the release asset.
